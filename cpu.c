@@ -307,7 +307,7 @@ static void fullOperation(struct CPU *cpu) {
 		}
 		case 0xc000: { // Cxkk - RND Vx, byte
 			byte r = FIRST_REGISTER(cpu->opcode);
-			cpu->V[r] = ((byte) random() & (cpu->opcode & BYTE_CONSTANT_MASK));
+			cpu->V[r] = ((byte) rand() & (cpu->opcode & BYTE_CONSTANT_MASK));
 			break;
 		}
 		case 0xd000: { // Dxyn - DRW Vx, Vy, nibble
